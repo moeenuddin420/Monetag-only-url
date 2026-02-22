@@ -1,19 +1,111 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Watch Ad</title>
+<title>moeenu.earn</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+.header{
+    padding:16px;
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    background:#020617;
+    letter-spacing:1px;
+}
+
+.balance{
+    text-align:center;
+    margin:20px;
+    font-size:18px;
+    opacity:.8;
+}
+
+.card{
+    background:#1e293b;
+    margin:20px;
+    border-radius:14px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 0 15px rgba(0,0,0,.4);
+}
+
+.watch-btn{
+    margin-top:15px;
+    padding:14px;
+    width:100%;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+    color:white;
+    font-weight:bold;
+}
+
+.watch-btn:active{
+    transform:scale(.98);
+}
+
+.footer{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background:#020617;
+    display:flex;
+    justify-content:space-around;
+    padding:12px 0;
+    font-size:14px;
+    opacity:.8;
+}
+</style>
 </head>
-<body style="text-align:center;margin-top:40vh;font-family:sans-serif">
 
-<button id="showAd">Watch Ad</button>
+<body>
 
-<script src="YOUR_MONETAG_MINIAPP_SCRIPT.js"></script>
+<div class="header">moeenu.earn</div>
+
+<div class="balance">
+    Today Earnings: $0.00
+</div>
+
+<div class="card">
+    <h2>Watch & Earn</h2>
+    <p>Tap below to watch sponsored content</p>
+    <button class="watch-btn" onclick="showAd()">Watch Ad</button>
+</div>
+
+<div class="card">
+    <h3>Why moeenu.earn?</h3>
+    <p>Fast • Clean • No Limits</p>
+</div>
+
+<div class="footer">
+    <div>Home</div>
+    <div>Earn</div>
+    <div>Stats</div>
+    <div>Profile</div>
+</div>
+
+<!-- MONETAG SCRIPT WILL GO HERE -->
+<script src="YOUR_MONETAG_SCRIPT.js"></script>
 
 <script>
-document.getElementById("showAd").onclick = function(){
-    showAd();
-};
+function showAd(){
+    if(typeof showAd === "function"){
+        showAd();
+    }else{
+        alert("Ad not loaded yet");
+    }
+}
 </script>
 
 </body>
